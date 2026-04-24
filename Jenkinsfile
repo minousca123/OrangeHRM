@@ -22,7 +22,7 @@ pipeline {
 							git branch: 'main', url: 'https://github.com/minousca123/OrangeHRM.git' 
 						} 
 					}
-					stage('Build') { 
+					/*stage('Build') { 
 						steps { 
 							bat 'mvn clean install' 
 						} 
@@ -31,7 +31,13 @@ pipeline {
 						steps { 
 							bat "mvn clean test" 
 						} 
-					} 
+					} */
+					
+					stage('Build & Test') {
+   						steps {
+        					bat 'mvn clean test'
+    					}
+					}
 					/*stage('Stop Selenium Grid') { 
 						steps { 
 							script { 
@@ -57,7 +63,7 @@ pipeline {
 						junit 'target/surefire-reports/*.xml' */
 						
 						archiveArtifacts artifacts: 'reports/**/*', fingerprint: true
-       					junit '**/test-output/*.xml'
+       					junit '**/target/surefire-reports/*.xml'
 					} 
 					success { 
 						emailext ( 
