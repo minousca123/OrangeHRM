@@ -43,7 +43,7 @@ pipeline {
 					stage('Reports') { 
 						steps {
 							publishHTML(target: [ 
-								reportDir: 'src/test/resources/ExtentReport', 
+								reportDir: 'reports', 
 								reportFiles: 'SparkReport.html', 
 								reportName: 'Extent Report' 
 							]) 
