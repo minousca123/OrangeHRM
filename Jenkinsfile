@@ -8,7 +8,7 @@ pipeline {
 			SELENIUM_GRID = "true" 
 			} 
 			stages { 
-				stage('Start Selenium Grid via Docker Compose') { 
+				/*stage('Start Selenium Grid via Docker Compose') { 
 					steps { 
 						script { 
 							echo "Starting Selenium Grid with Docker Compose..." 
@@ -16,7 +16,7 @@ pipeline {
 							echo "Waiting for Selenium Grid to be ready..." sleep 20 // Add a wait if needed 
 							} 
 						} 
-					} 
+					} */
 					stage('Checkout') { 
 						steps { 
 							git branch: 'main', url: 'https://github.com/minousca123/OrangeHRM.git' 
@@ -32,14 +32,14 @@ pipeline {
 							bat "mvn clean test -DseleniumGrid=true" 
 						} 
 					} 
-					stage('Stop Selenium Grid') { 
+					/*stage('Stop Selenium Grid') { 
 						steps { 
 							script { 
 								echo "Stopping Selenium Grid..." 
 								bat "docker compose -f ${COMPOSE_PATH}\\docker-compose.yml down" 
 							} 
 						}
-					} 
+					} */
 					stage('Reports') { 
 						steps {
 							publishHTML(target: [ 
