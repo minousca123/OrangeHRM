@@ -25,7 +25,6 @@
 			<class name="test.TC02_LoginPageTest"></class> 
 			<class name="test.TC03_HomePageTest"></class>
 			<class name="test.TC05_DBVerificationTest"></class>-->
-			
 			<class name="test.TC06_ApiTest"></class>
 		</classes>
 	</test>
