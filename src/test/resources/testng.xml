@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- parallel=Tests means there would be only 1 thread created as tehre is 
+	only 1 tset and inside it classes. SO classes will be run one after other -->
+<!-- if parallel="classes" means 3 threads will be created and each class 
+	on different thread/browser -->
+<!-- if parallel ="methods" 5 threads will be created as there are total 
+	5 methods in total -->
+<!-- <suite name="OrangeHRMSuite" parallel="methods" thread-count="5"> <test 
+	name = "OrangeHRMTest"> <classes> <class name = "test.TC01_DummyTest"></class> 
+	<class name = "test.TC02_LoginPageTest"></class> <class name = "test.TC03_HomePageTest"></class> 
+	</classes> </test> </suite> -->
+
+
+<suite name="OrangeHRMSuite" parallel="tests" thread-count="5">
+
+	<listeners>
+		<listener class-name="listeners.TestListener"></listener>
+	</listeners>
+
+	<test name="OrangeHRMTest">
+		<classes>
+			<class name="test.TC01_DummyTest"></class> 
+			<class name="test.TC02_LoginPageTest"></class> 
+			<class name="test.TC03_HomePageTest"></class>
+			<class name="test.TC05_DBVerificationTest"></class>
+			
+			<class name="test.TC06_ApiTest"></class>
+		</classes>
+	</test>
+</suite>
