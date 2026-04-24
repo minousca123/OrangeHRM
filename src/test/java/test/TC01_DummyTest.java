@@ -16,7 +16,7 @@ public class TC01_DummyTest extends BaseClass{
 		
 		System.out.println("Test Passed - Title matching");
 		ExtentManager.logSkip("This case is skipped");
-		throw new SkipException("Skipping the test as part of testing");
+		//throw new SkipException("Skipping the test as part of testing");
 		
 		
 	}

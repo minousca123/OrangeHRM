@@ -39,7 +39,7 @@ public class TC02_LoginPageTest extends BaseClass{
 	public void inValidLoginTest(String username, String password) {
 		ExtentManager.logStep("Navigating to login page. enter username and passowrd");
 		loginPage.login(username, password);
-		String expectedErrorMsg = "Invalid credentials1";
+		String expectedErrorMsg = "Invalid credentials";
 		Assert.assertTrue(loginPage.verifyErrorMessage(expectedErrorMsg), "Test Failed: Invalid Error Message");
 		ExtentManager.logStep("Validation successful");
 		
