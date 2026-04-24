@@ -22,16 +22,6 @@ pipeline {
 							git branch: 'main', url: 'https://github.com/minousca123/OrangeHRM.git' 
 						} 
 					}
-					/*stage('Build') { 
-						steps { 
-							bat 'mvn clean install' 
-						} 
-					} 
-					stage('Test') { 
-						steps { 
-							bat "mvn clean test" 
-						} 
-					} */
 					
 					stage('Build & Test') {
    						steps {
@@ -76,7 +66,10 @@ pipeline {
 							<p><b>Build Number:</b> #${env.BUILD_NUMBER}</p> 
 							<p><b>Build Status:</b> <span style="color: green;"><b>SUCCESS</b></span></p> 
 							<p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p> 
-							<p><b>Extent Report:</b> <a href="http://localhost:8081/job/${env.JOB_NAME}/HTML_20Extent_20Report/">Click here</a></p> 
+							<p><b>Extent Report:</b> <a href="http://localhost:8081/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/reports/ExtentReport.html/">Click here</a></p> 
+							
+						
+							
 							<p>Best regards,</p> 
 							<p><b>Automation Team</b></p>
 							
@@ -97,7 +90,7 @@ pipeline {
 							<p><b>Build Status:</b> <span style="color: red;"><b>FAILED ❌</b></span></p> 
 							<p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
 							<p><b>Please check the logs and take necessary actions.</b></p> 
-							<p><b>Extent Report (if available):</b> <a href="http://localhost:8081/job/${env.JOB_NAME}/HTML_20Extent_20Report/">Click here</a></p> 
+							<p><b>Extent Report (if available):</b> <a href="http://localhost:8081/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/reports/ExtentReport.html/">Click here</a></p> 
 							<p>Best regards,</p> 
 							<p><b>Automation Team</b></p>
 							""", 
