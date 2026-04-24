@@ -24,12 +24,12 @@ pipeline {
 					}
 					stage('Build') { 
 						steps { 
-							bat 'mvn clean install -DseleniumGrid=true' 
+							bat 'mvn clean install' 
 						} 
 					} 
 					stage('Test') { 
 						steps { 
-							bat "mvn clean test -DseleniumGrid=true" 
+							bat "mvn clean test" 
 						} 
 					} 
 					/*stage('Stop Selenium Grid') { 
