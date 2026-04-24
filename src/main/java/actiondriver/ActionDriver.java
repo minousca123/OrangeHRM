@@ -59,9 +59,6 @@ public class ActionDriver {
 			logger.info("CLicked element --> " + elementDesc);
 
 		} catch (Exception e) {
-			// System.out.println("Unable to click: " + e.getMessage());
-			// ExtentManager.logFailure(BaseClass.getDriver(),"Unable to click an
-			// element",elementDesc +"_unable to click");
 			applyBorder(by, "red");
 			logger.error("Unable to click an element");
 
